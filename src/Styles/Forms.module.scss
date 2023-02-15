@@ -28,6 +28,39 @@
     opacity: 0.6;
 }
 
+.group_input {
+    width: 350px !important;
+    height: 38px;
+    padding: 0px 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.15);
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 14px;
+    font-family: 'AvenirNextLTPro-Regular';
+}
+
+.group_input:focus{
+    outline: none;
+}
+
+.input_g_btn {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'AvenirNextLTPro-Regular';
+    color: $white;
+    background-color: #39CDCC;
+    padding: 0px 13px;
+    font-weight: bolder;
+    font-size: 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
 // SCSS FOR BTN
 .btn {
     width: 400px;

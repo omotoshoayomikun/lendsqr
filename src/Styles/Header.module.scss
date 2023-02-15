@@ -1,0 +1,39 @@
+.head_container {
+    height: 100px;
+    background: #FFFFFF;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    // width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    font-family: 'AvenirNextLTPro-Regular' !important;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.log_logo {
+    height: 30px;
+    width: 160px;
+} 
+
+.round {
+    border-radius: 50%;
+}
+
+.text1 {
+    font-family:'WorkSans-Regular' !important;
+    color: #213F7D;
+    text-decoration: underline;
+    font-weight: 550;
+}
+
+.text2 {
+    font-family: 'WorkSans-Regular' !important;
+    color: #213F7D;
+    font-weight: 600;
+}

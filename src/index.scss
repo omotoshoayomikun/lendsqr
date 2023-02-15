@@ -10,6 +10,11 @@
   src: url('Fonts/AvenirNext/AvenirNextLTPro-Bold.otf');
 }
 
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('Fonts/WorkSans/WorkSans-Regular.ttf');
+}
+
 body {
   margin: 0;
   font-family: 'AvenirNextLTPro-Regular' !important;
@@ -21,6 +26,49 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav a {
+  text-decoration: none;
+  color: $shady-blue;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+nav a.active {
+  padding: 12px 22px;
+  text-decoration: none;
+  color: $shady-blue;
+  border-left: 3px solid $sky-color;
+  background: rgba(57, 205, 204, 0.06);
+  font-size: 16px;
+  opacity: 1;
+
+
+}
+
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e6e5e5; 
+  border-radius: 50px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(161, 161, 161); 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .bg-white {
@@ -186,4 +234,60 @@ code {
 
 .mb-7 {
   margin-bottom: 40px;
+}
+
+.mr-1 {
+  margin-right: 10px;
+}
+
+.mr-2 {
+  margin-right: 15px;
+}
+
+.mr-3 {
+  margin-right: 20px;
+}
+
+.mr-4 {
+  margin-right: 25px;
+}
+
+.mr-5 {
+  margin-right: 30px;
+}
+
+.mr-6 {
+  margin-right: 35px;
+}
+
+.mr-7 {
+  margin-right: 40px;
+}
+
+.ml-1 {
+  margin-left: 10px;
+}
+
+.ml-2 {
+  margin-left: 15px;
+}
+
+.ml-3 {
+  margin-left: 20px;
+}
+
+.ml-4 {
+  margin-left: 25px;
+}
+
+.ml-5 {
+  margin-left: 30px;
+}
+
+.ml-6 {
+  margin-left: 35px;
+}
+
+.ml-7 {
+  margin-left: 40px;
 }

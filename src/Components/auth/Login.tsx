@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import '../../Styles/Login.scss'
-import FormInput from "../Forms/Input";
-import Btn from "../Forms/Btn";
+import styles from '../../Styles/Login.module.scss'
+import {FormInput} from "../Forms/Input";
+import {Btn} from "../Forms/Btn";
 
 export default function Login() {
 
@@ -29,25 +29,23 @@ export default function Login() {
         setValues({ ...values, [e.target.name]: e.target.value })
     }
 
-    console.log(values)
-
 
     return (
         <>
-            <div className="wrap-container h-100vh">
-                <div className="log-box1 df df-column" style={{ justifyContent: 'space-around' }}>
+            <div className={`${styles.wrap_container} h-100vh`}>
+                <div className={`${styles.log_box1} df df-column jc-space-around`}>
                     <div >
-                        <img src="/images/logo.png" alt="logo" className="log-logo" />
+                        <img src="/images/logo.png" alt="logo" className={styles.log_logo} />
                     </div>
-                    <div className="log-img">
+                    <div className={styles.log_img}>
                         <img src="/images/login_img.png" alt="Login Image" />
                     </div>
                     <div></div>
                 </div>
-                <div className="log-box2" >
-                    <form className="sub-box2">
-                        <div className="text1">Welcome!</div>
-                        <div className="text2 mb-7" >Enter details to login.</div>
+                <div className={styles.log_box2} >
+                    <form className={styles.sub_box2}>
+                        <div className={styles.text1}>Welcome!</div>
+                        <div className={`${styles.text2} mb-7`} >Enter details to login.</div>
                         {
                             inputs.map(input => (
                                 <div key={input.id} className="mb-4">
@@ -56,7 +54,7 @@ export default function Login() {
 
                             ))
                         }
-                        <div className="colored-text mb-6">Forgot PASSWORD?</div>
+                        <div className={`${styles.colored_text} mb-6`}>Forgot PASSWORD?</div>
                         <div>
                             <Btn text='Login' />
                         </div>

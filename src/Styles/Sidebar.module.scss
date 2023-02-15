@@ -1,0 +1,48 @@
+@import "../Styles/variables";
+.side_container {
+    width: 283px;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding-bottom: 120px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+    overflow-x: scroll;
+}
+
+.side_container::-webkit-scrollbar{
+    display: none;
+}
+
+.side_wrap {
+    font-family: 'WorkSans-Regular' !important;
+    margin-top: 140px;
+}
+
+.txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    // line-height: 19px;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: $shady-blue;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.text_side {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'WorkSans-Regular' !important;
+    text-transform: uppercase;
+    color: $alt-blue;
+    margin-left: 26px;
+    
+}

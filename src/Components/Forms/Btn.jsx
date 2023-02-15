@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Btn({ text }) {
+export function Btn({ text }) {
     return (
         <>
             <div className="btn">
