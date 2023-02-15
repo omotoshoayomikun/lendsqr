@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from '../../Styles/Login.module.scss'
 import {FormInput} from "../Forms/Input";
+import styles from "../../Styles/Login.module.scss";
 import {Btn} from "../Forms/Btn";
 
 export default function Login() {

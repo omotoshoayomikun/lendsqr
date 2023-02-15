@@ -12,8 +12,9 @@ function Header() {
           <img src="/images/logo.png" alt="logo" className={`${styles.log_logo}`} />
         </div>
         <div className="">
-          <SearchInput />
+          <SearchInput placeholder='Search for anything' />
         </div>
+        <div></div>
         <div className="df ai-center">
           <div className={`${styles.text1} mr-5`}>Docs</div>
           <div className='df jc-center mr-5'><TfiBell size={20} fontWeight='bold' color='#213F7D' /></div>

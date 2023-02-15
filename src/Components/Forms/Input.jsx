@@ -13,11 +13,11 @@ export function FormInput(props) {
 
 
 
-export function SearchInput() {
+export function SearchInput({placeholder}) {
   return(
     <>
     <div className={`df`}>
-      <input type="text" className={styles.group_input} />
+      <input type="text" className={styles.group_input} placeholder={placeholder} />
       <div className={styles.input_g_btn}>
         <AiOutlineSearch />
       </div>

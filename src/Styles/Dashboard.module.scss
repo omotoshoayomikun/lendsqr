@@ -1,3 +1,12 @@
 .text_h {
-    
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'WorkSans-Medium' !important;
+    margin-bottom: 35px;
+}
+
+.card_control {
+    display: flex;
+    justify-content: space-between;
 }

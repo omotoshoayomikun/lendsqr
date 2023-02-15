@@ -29,8 +29,8 @@
 }
 
 .group_input {
-    width: 350px !important;
-    height: 38px;
+    width: 320px !important;
+    height: 35px;
     padding: 0px 10px;
     background: #FFFFFF;
     border: 1px solid rgba(84, 95, 125, 0.15);
@@ -38,15 +38,19 @@
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     font-size: 14px;
-    font-family: 'AvenirNextLTPro-Regular';
+    font-family: 'WorkSans-Regular';
 }
 
-.group_input:focus{
+.group_input:focus {
     outline: none;
 }
 
+.group_input::placeholder {
+    font-family: 'WorkSans-Regular';
+}
+
 .input_g_btn {
-    height: 40px;
+    height: 37px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,4 +84,56 @@
     line-height: 19px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+.card_body {
+    width: 183px;
+    max-width: 183px;
+    // min-width: 225px;
+    // width: 200%;
+    height: 110px;
+    max-height: 110px;
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 25px 20px;
+}
+
+.card_icon {
+    width: max-content;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+
+.card_text1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    // line-height: 16px;
+    text-transform: uppercase;
+    color: rgba(84, 95, 125, 1);
+    font-family: 'WorkSans-Medium' !important;
+}
+
+.card_text2 {
+    // font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    text-transform: uppercase;
+    font-family: 'WorkSans-Bold' !important;
+}
+
+.filter {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
 }
