@@ -1,0 +1,57 @@
+.text_h {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'WorkSans-Medium' !important;
+    margin-bottom: 35px;
+}
+
+.card_control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cclxx {
+    cursor: pointer;
+}
+
+.card2 {
+    position: absolute;
+    top: 200px;
+    right: -15px;
+}
+
+.round {
+    width: 90px;
+    height: 90px;
+    background-color: rgba(33, 63, 125, 0.16);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    height: 70px;
+    border: 1px solid rgba(84, 95, 125, 0.2)
+}
+
+.text1 {
+    font-size: 22px;
+    font-family: 'WorkSans-Medium' !important;
+}
+
+.text2 {
+    font-size: 14px;
+    // font-family: 'WorkSans-Medium' !important;
+}
+
+.text3 {
+    font-size: 16px;
+    font-family: 'WorkSans-Medium' !important;
+}
+
+.text4 {
+    font-size: 12px;
+    font-family: 'WorkSans-Medium' !important;
+}

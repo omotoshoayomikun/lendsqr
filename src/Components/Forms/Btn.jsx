@@ -20,3 +20,23 @@ export function ResetBtn({ text }) {
         </>
     )
 }
+
+export function DangerOutlinBtn({ text }) {
+    return (
+        <>
+            <div className={styles.danger_line_btn}>
+                {text}
+            </div>
+        </>
+    )
+}
+
+export function PriOutlinBtn({ text }) {
+    return (
+        <>
+            <div className={styles.pri_line_btn}>
+                {text}
+            </div>
+        </>
+    )
+}

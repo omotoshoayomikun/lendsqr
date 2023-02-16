@@ -77,7 +77,7 @@
 }
 
 .input_g_btn {
-    height: 37px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,6 +181,50 @@
     cursor: pointer;
 }
 
+.danger_line_btn {
+    width: 100%;
+    padding: 0px 15px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    color: #E4033B;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'AvenirNextLTPro-Bold' !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    // line-height: 19px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid #E4033B;
+    cursor: pointer;
+}
+
+.pri_line_btn {
+    width: 100%;
+    padding: 0px 15px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    color: #39CDCC;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'AvenirNextLTPro-Bold' !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    // line-height: 19px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid #39CDCC;
+    cursor: pointer;
+}
+
 .card_body {
     width: 230px;
     height: 145px;
@@ -255,4 +299,35 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+}
+
+// ////////////////////////////////////////////////////////
+.xssel {
+    width: 60px;
+    padding: 3px 0px;
+    background-color: rgba(33, 63, 125, 0.1) !important;
+    outline: none;
+    border: 0px solid #fff;
+    font-size: 14px;
+    font-family: 'WorkSans-Regular' !important;
+    color: #213F7D;
+    border-radius: 4px;
+
+}
+
+.pag_dir {
+    background-color: rgba(33, 63, 125, 0.1);
+    padding: 3px 5px;
+    border-radius: 4px;
+}
+
+.pag_dir:first-child {
+    margin-right: 12px;
+}
+
+.pag_num {
+    font-size: 16px;
+    margin-right: 12px;
+    color: #545F7D;
+
 }

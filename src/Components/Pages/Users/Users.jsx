@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import styles from '../Styles/Dashboard.module.scss'
-import { Card, Card2 } from './Forms/Card'
-import Pagination from './Forms/Pagination'
-import Filter from './Forms/Filter'
+import styles from '../../../Styles/Users.module.scss'
+import { Card, Card2 } from '../../Forms/Card'
+import Pagination from '../../Forms/Pagination'
+import { useNavigate } from 'react-router-dom'
+import Filter from '../../Forms/Filter'
 import axios from 'axios'
 
 function Users() {
+
+  const navigate = useNavigate()
 
 
   const [details, setDetails] = useState([])
@@ -55,19 +58,19 @@ function Users() {
         <table className='table'>
           <thead>
             <tr>
-              <th onClick={() => setFilter(!filter)}> organization <img src="/icons/filter.png" alt="" /> </th>
-              <th onClick={() => setFilter(!filter)}> Username <img src="/icons/filter.png" alt="" /> </th>
-              <th onClick={() => setFilter(!filter)}> Email <img src="/icons/filter.png" alt="" /> </th>
-              <th onClick={() => setFilter(!filter)}> Phone number <img src="/icons/filter.png" alt="" /> </th>
-              <th onClick={() => setFilter(!filter)}> Date joined <img src="/icons/filter.png" alt="" /> </th>
-              <th onClick={() => setFilter(!filter)}>Status <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}> organization <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}> Username <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}> Email <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}> Phone number <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}> Date joined <img src="/icons/filter.png" alt="" /> </th>
+              <th className='cursor' onClick={() => setFilter(!filter)}>Status <img src="/icons/filter.png" alt="" /> </th>
 
             </tr>
           </thead>
           <tbody>
             {
               details.map(detail => (
-                <tr key={detail.id} className='p-r'>
+                <tr key={detail.id} className='p-r cursor' onClick={() => navigate(`${detail.id}/general-details`)}>
                   <td>{detail.orgName.split('-').shift()}</td>
                   <td>{detail.userName}</td>
                   <td>{detail.email}</td>
@@ -84,7 +87,7 @@ function Users() {
                     </div>
                   </td>
                 </tr>
-              ))
+              )).splice(0,2)
             }
 
           </tbody>
@@ -99,7 +102,7 @@ function Users() {
       </div>
 
 
-      <div className="">
+      <div className="mt-2">
         <Pagination />
       </div>
 
