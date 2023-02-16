@@ -11,7 +11,14 @@ export function FormInput(props) {
   )
 }
 
-
+export function InputSx(props) {
+  const { onChange, id, ...inputprops} = props
+  return(
+    <>
+    <input {...inputprops} className={styles.inputsx} />
+    </>
+  )
+}
 
 export function SearchInput({placeholder}) {
   return(

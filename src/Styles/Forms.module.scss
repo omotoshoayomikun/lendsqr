@@ -4,7 +4,8 @@
 // SCSS FOR INPUT
 .input {
     // height: 20px;
-    width: 400px !important;
+    display: block;
+    width: 100%;
     height: 40px;
     padding: 0px 10px;
     background: #FFFFFF;
@@ -16,6 +17,32 @@
 
 .input:focus {
     outline: none;
+}
+
+.inputsx {
+    // height: 20px;
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'WorkSans-Regular';
+}
+
+.inputsx:focus {
+    outline: none;
+}
+
+.inputsx::placeholder {
+    font-family: 'WorkSans-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $alt-blue;
+    opacity: 0.6;
 }
 
 ::placeholder {
@@ -65,9 +92,54 @@
 
 }
 
+.sel_cont {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.select_box {
+    width: 100%;
+    padding: 10px 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'WorkSans-Regular' !important;
+    // pointer-events: none;
+    cursor: pointer;
+}
+
+.select_opt {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 8px 0px;
+    font-family: 'WorkSans-Regular' !important;
+}
+
+.sel_text {
+    font-size: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.sel_text:hover {
+    font-size: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border-left: 3px solid $sky-color;
+    background: rgba(57, 205, 204, 0.06);
+}
+
 // SCSS FOR BTN
 .btn {
-    width: 400px;
+    width: 100%;
     padding: 0px 10px;
     height: 40px;
     background-color: #39CDCC;
@@ -83,16 +155,35 @@
     font-size: 14px;
     line-height: 19px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    cursor: pointer;
+}
+
+.reset_btn {
+    width: 100%;
+    padding: 0px 10px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    // color: #FFFFFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'AvenirNextLTPro-Regular' !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+    // text-transform: uppercase;
+    border: 1px solid #545F7D;
+    cursor: pointer;
 }
 
 .card_body {
-    width: 183px;
-    max-width: 183px;
-    // min-width: 225px;
-    // width: 200%;
-    height: 110px;
-    max-height: 110px;
+    width: 230px;
+    height: 145px;
     background: #FFFFFF;
     border: 1px solid rgba(33, 63, 125, 0.06);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -121,19 +212,47 @@
 }
 
 .card_text2 {
-    // font-weight: 400;
+    font-weight: 700;
     font-size: 24px;
     line-height: 25px;
     text-transform: uppercase;
-    font-family: 'WorkSans-Bold' !important;
+    font-family: 'WorkSans-Medium' !important;
 }
+
+
+.card2_body {
+    // position: absolute;
+    width: 180px;
+    height: 130px;
+    background: #FFFFFF;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 25px 20px;
+}
+
+// ///////////////////////////////////////////////////////
 
 .filter {
     position: absolute;
-    width: 200px;
+    width: 245px;
+    left: 15px;
+    top: 75px;
     height: auto;
     background: #FFFFFF;
     border: 1px solid rgba(84, 95, 125, 0.14);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
+    padding: 15px 10px;
+}
+
+.fil_text {
+    font-family: 'WorkSans-Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
 }

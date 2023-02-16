@@ -10,3 +10,13 @@ export function Btn({ text }) {
         </>
     )
 }
+
+export function ResetBtn({ text }) {
+    return (
+        <>
+            <div className={styles.reset_btn}>
+                {text}
+            </div>
+        </>
+    )
+}

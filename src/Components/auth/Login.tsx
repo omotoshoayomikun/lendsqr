@@ -14,7 +14,7 @@ export default function Login() {
         {
             id: 1,
             name: 'email',
-            type: 'input',
+            type: 'email',
             placeholder: 'Email',
         },
         {
@@ -29,6 +29,7 @@ export default function Login() {
         setValues({ ...values, [e.target.name]: e.target.value })
     }
 
+    console.log(values)
 
     return (
         <>
@@ -49,14 +50,14 @@ export default function Login() {
                         {
                             inputs.map(input => (
                                 <div key={input.id} className="mb-4">
-                                    <FormInput {...input} onChange={onChange} />
+                                    <FormInput {...input} value={values[input.name]} onChange={onChange} />
                                 </div>
 
                             ))
                         }
                         <div className={`${styles.colored_text} mb-6`}>Forgot PASSWORD?</div>
                         <div>
-                            <Btn text='Login' />
+                            <Btn text='LOG IN' />
                         </div>
                     </form>
 
