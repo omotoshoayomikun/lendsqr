@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Login from './Components/auth/Login.tsx';
+import Login from './Components/auth/Login';
 import Layout from './Components/Layouts/Layout';
 import Users from './Components/Pages/Users/Users';
 import UserDetail from './Components/Pages/Users/UserDetail';
@@ -14,7 +14,7 @@ function App() {
       <Route path='admin' element={<Layout />}>
         <Route index element={<Users />} />
         <Route path='users' element={<Users />} />
-        <Route path='users/:id' element={<UserDetail />}>
+        <Route path='users/:userId' element={<UserDetail />}>
           <Route index element={<GeneralDetails />} />
           <Route path='general-details' element={<GeneralDetails />} />
         </Route>

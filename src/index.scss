@@ -112,6 +112,14 @@ nav a.active {
   cursor: pointer;
 }
 
+.obj-cover {
+  object-fit: cover;
+}
+
+.obj-contain {
+  object-fit: contain;
+}
+
 .p-r {
   position: relative;
 }

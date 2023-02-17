@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from '../../Styles/Forms.module.scss'
 
-export function Btn({ text }) {
+export function Btn({ text, style, handleBtn }) {
     return (
         <>
-            <div className={styles.btn}>
+            <div className={styles.btn} style={style} onClick={handleBtn}>
                 {text}
             </div>
         </>

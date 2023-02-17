@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import {FormInput} from "../Forms/Input";
 import styles from "../../Styles/Login.module.scss";
+import { useNavigate, Link } from 'react-router-dom'
 import {Btn} from "../Forms/Btn";
 
 export default function Login() {
+
+    const navigate = useNavigate()
 
     const [values, setValues] = useState({
         email: '',
         password: ''
     })
+
+    const [toggleShowPass, setToggleShowPass] = useState(false)
 
     const inputs = [
         {
@@ -20,8 +25,9 @@ export default function Login() {
         {
             id: 2,
             name: 'password',
-            type: 'password',
+            type: toggleShowPass?  'text' : 'password',
             placeholder: 'Password',
+            pass_change: toggleShowPass? 'HIDE' : 'SHOW'
         },
     ]
 
@@ -29,7 +35,17 @@ export default function Login() {
         setValues({ ...values, [e.target.name]: e.target.value })
     }
 
-    console.log(values)
+    const handleBtn = () => {
+
+        // try {
+
+        // } catch (err) {
+        //     console.log(err)
+        // }
+
+
+        navigate('/admin/users')
+    }
 
     return (
         <>
@@ -50,14 +66,14 @@ export default function Login() {
                         {
                             inputs.map(input => (
                                 <div key={input.id} className="mb-4">
-                                    <FormInput {...input} value={values[input.name]} onChange={onChange} />
+                                    <FormInput {...input} value={values[input.name]} onChange={onChange} handleToggleDis={() => setToggleShowPass(!toggleShowPass)} />
                                 </div>
 
                             ))
                         }
-                        <div className={`${styles.colored_text} mb-6`}>Forgot PASSWORD?</div>
+                        <Link className={`${styles.colored_text} mb-6`}>Forgot PASSWORD?</Link>
                         <div>
-                            <Btn text='LOG IN' />
+                            <Btn text='LOG IN' style={{height: '50px'}} handleBtn={handleBtn} />
                         </div>
                     </form>
 

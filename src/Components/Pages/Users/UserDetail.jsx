@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../../Styles/Users.module.scss'
 import { DangerOutlinBtn, PriOutlinBtn } from '../../Forms/Btn'
-import { NavLink, Outlet, Link } from 'react-router-dom'
+import { NavLink, Outlet, Link, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { Spinner } from '../../Forms/Spinner'
 
 function UserDetail() {
+
+    const { userId } = useParams()
+    const [detail, setDetail] = useState({})
+    const [spinner, setSpinner] = useState(true)
+
+    useEffect(() => {
+        const getUserDetail = async () => {
+            try {
+                const response = await axios.get(` https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${userId}`)
+                setDetail(response.data)
+                setSpinner(false)
+            } catch (err) {
+                setSpinner(false)
+                console.log(err)
+            }
+        }
+
+        getUserDetail()
+    }, [])
+
+
+    if (spinner) {
+        return <Spinner />
+    }
+
     return (
         <>
             <Link to='/admin/users' className='df'>
@@ -20,11 +47,11 @@ function UserDetail() {
 
             <div className="card" style={{ paddingBottom: '0px' }}>
                 <div className="df ai-center mb-7">
-                    <div className={`${styles.round} mr-2`}>
-                        <img src="/icons/single_user.png" alt="" />
+                    <div className={`${styles.round} mr-2 obj-contain`}>
+                        <img src={detail.profile.avatar} className={`${styles.round}`} alt="" />
                     </div>
                     <div className='mr-3'>
-                        <div className={`${styles.text1} mb-1`}>Grace Effiom</div>
+                        <div className={`${styles.text1} mb-1`}>{detail.profile.firstName + ' ' + detail.profile.lastName}</div>
                         <div className={styles.text2}>LSQFf587g90</div>
                     </div>
                     <div className={styles.line}></div>
@@ -34,8 +61,8 @@ function UserDetail() {
                     </div>
                     <div className={styles.line}></div>
                     <div className='ml-3'>
-                        <div className={`${styles.text1} mb-1`}>₦200,000.00</div>
-                        <div className={styles.text2}>9912345678/Providus Bank</div>
+                        <div className={`${styles.text1} mb-1`}>₦{detail.accountBalance}</div>
+                        <div className={styles.text2}>{detail.accountNumber}/Providus Bank</div>
                     </div>
                 </div>
 
