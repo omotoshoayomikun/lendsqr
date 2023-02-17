@@ -7,22 +7,22 @@
 
 .log_box1 {
     width: 50% !important;
-
 }
 
 .log_box2 {
     position: relative;
     width: 50%;
     height: inherit;
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
 }
 
 .sub_box2 {
-    position: absolute;
-    margin: auto;
+    // position: absolute;
+    // margin: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    left: 90px;
+    margin-left: 90px;
     width: 447px;
     height: inherit;
 }
@@ -71,6 +71,62 @@
     margin-right: auto;
 }
 
-// @media screen and () {
-    
-// }
+
+.logo_sm {
+    display: none;
+}
+
+@media screen and (max-width: 1164px) {
+    .wrap_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo_sm {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+    }
+
+    .logo_sm_img {
+        height: 26px;
+        width: 153px;
+        // margin-left: 60px;
+    }
+
+    .log_box1 {
+        display: none;
+    }
+
+    .log_box2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub_box2 {
+        margin-left: 0px;
+        width: 447px;
+        height: inherit;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .log_box2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+    }
+
+    .sub_box2 {
+        margin-left: 0px;
+        width: 100%;
+        height: inherit;
+    }
+}

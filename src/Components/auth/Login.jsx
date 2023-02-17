@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {FormInput} from "../Forms/Input";
+import { FormInput } from "../Forms/Input";
 import styles from "../../Styles/Login.module.scss";
 import { useNavigate, Link } from 'react-router-dom'
-import {Btn} from "../Forms/Btn";
+import { Btn } from "../Forms/Btn";
 
 export default function Login() {
 
@@ -25,9 +25,9 @@ export default function Login() {
         {
             id: 2,
             name: 'password',
-            type: toggleShowPass?  'text' : 'password',
+            type: toggleShowPass ? 'text' : 'password',
             placeholder: 'Password',
-            pass_change: toggleShowPass? 'HIDE' : 'SHOW'
+            pass_change: toggleShowPass ? 'HIDE' : 'SHOW'
         },
     ]
 
@@ -59,6 +59,11 @@ export default function Login() {
                     </div>
                     <div></div>
                 </div>
+                {/* LOGO FOR SMALL SCREEN */}
+                <div className={styles.logo_sm} >
+                    <img src="/images/logo.png" alt="logo" className={styles.logo_sm_img} />
+                </div>
+                {/* ///////////////////// */}
                 <div className={styles.log_box2} >
                     <form className={styles.sub_box2}>
                         <div className={styles.text1}>Welcome!</div>
@@ -73,7 +78,7 @@ export default function Login() {
                         }
                         <Link className={`${styles.colored_text} mb-6`}>Forgot PASSWORD?</Link>
                         <div>
-                            <Btn text='LOG IN' style={{height: '50px'}} handleBtn={handleBtn} />
+                            <Btn text='LOG IN' style={{ height: '50px' }} handleBtn={handleBtn} />
                         </div>
                     </form>
 

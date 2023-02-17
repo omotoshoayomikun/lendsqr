@@ -68,8 +68,8 @@
 }
 
 .group_input {
-    width: 320px !important;
-    height: 35px;
+    width: 100% !important;
+    height: 40px;
     padding: 0px 10px;
     background: #FFFFFF;
     border: 1px solid rgba(84, 95, 125, 0.15);
@@ -89,7 +89,7 @@
 }
 
 .input_g_btn {
-    height: 35px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,7 +238,7 @@
 }
 
 .card_body {
-    width: 230px;
+    width: 100%;
     height: 145px;
     background: #FFFFFF;
     border: 1px solid rgba(33, 63, 125, 0.06);
@@ -287,7 +287,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px 20px 25px 20px;
+    padding: 10px 0px;
+}
+
+.card2_body a {
+    padding: 8px 20px;
+    transition: all 0.5s ease;
+}
+
+.card2_body a:hover {
+    color: $shady-blue;
+    border-left: 3px solid $sky-color;
+    background: rgba(57, 205, 204, 0.06);
 }
 
 // ///////////////////////////////////////////////////////
@@ -358,6 +369,16 @@
     z-index: 100;
 }
 
+.sm_spinner_cont {
+    width: 100%;
+    // height: calc(100vh - 210px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
 .spinner {
     width: 60px;
     height: 60px;
@@ -379,7 +400,7 @@
 .md_spinner {
     width: 25px;
     height: 25px;
-    border: 5px solid grey;
+    border: 5px solid #213F7D;
     border-radius: 50%;
     border-top-color: transparent;
     animation: spinner 1.5s infinite;
@@ -389,6 +410,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -403,7 +425,14 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .lilo {
+        margin: auto;
     }
 }

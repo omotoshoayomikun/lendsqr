@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../../Styles/Forms.module.scss'
+import { Link } from 'react-router-dom'
 
 export function Card({ detail, quantity, icon, bgColor }) {
     return (
@@ -15,22 +16,22 @@ export function Card({ detail, quantity, icon, bgColor }) {
     )
 }
 
-export function Card2({ detail, quantity, icon, bgColor }) {
+export function Card2({ id }) {
     return (
         <>
-            <div className={styles.card2_body}>
-                <div className={`${styles.card2_list} df pb-2`}>
+            <div className={`${styles.card2_body}`}>
+                <Link to={`${id}/general-details`} className={`${styles.card2_list} df pb-2`}>
                     <div className='mr-1'><img src="/icons/eyes.png" alt="" /></div>
                     <div className='fs-2'>View Details</div>
-                </div>
-                <div className={`${styles.card2_list} df pb-2`}>
+                </Link>
+                <Link className={`${styles.card2_list} df pb-2`}>
                     <div className='mr-1'><img src="/icons/blacklist.png" alt="" /></div>
                     <div className='fs-2'>Blacklist User</div>
-                </div>
-                <div className={`${styles.card2_list} df pb-2`}>
+                </Link>
+                <Link className={`${styles.card2_list} df pb-2`}>
                     <div className='mr-1'><img src="/icons/active_user.png" alt="" /></div>
                     <div className='fs-2'>Activate User</div>
-                </div>
+                </Link>
             </div>
         </>
     )

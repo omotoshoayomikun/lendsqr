@@ -18,7 +18,7 @@ export function InputSx(props) {
   const { onChange, id, ...inputprops } = props
   return (
     <>
-      <input {...inputprops} className={styles.inputsx} />
+      <input {...inputprops} className={styles.inputsx} onChange={onChange} />
     </>
   )
 }

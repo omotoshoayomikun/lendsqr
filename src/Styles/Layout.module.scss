@@ -10,14 +10,82 @@
     display: flex;
 }
 
+.sidebar {
+    position: fixed;
+    width: 270px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    font-family: 'WorkSans-Regular' !important;
+}
+
 .body_cont {
     width: 100%;
     background-color: $default;
     margin-left: 270px;
     margin-top: 90px;
     padding: 60px 50px;
-    height: calc(100vh - 100px);
+    height: auto;
     font-family: 'WorkSans-Regular' !important;
     color: $shady-blue;
-    position: relative;
+    // position: relative;
+    overflow-y: hidden;
+}
+
+.sideLg {
+    display: block;
+    position: fixed;
+    width: 270px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    font-family: 'WorkSans-Regular' !important;
+}
+
+.sideXs {
+    display: none;
+    position: fixed;
+    width: 270px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    font-family: 'WorkSans-Regular' !important;
+    z-index: 40;
+}
+
+@media screen and (max-width: 930px) {
+
+    .sidebar {
+        position: fixed;
+        width: 250px;
+        height: 100vh;
+        left: 0px;
+        top: 0px;
+        font-family: 'WorkSans-Regular' !important;
+        // padding-top: 120px;
+    }
+
+    .sideLg {
+        display: none;
+    }
+
+    .sideXs {
+        display: block;
+    }
+
+    .body_cont {
+        margin-top: 70px;
+        margin-left: 0px;
+        padding: 60px 30px;
+    }
+
+    .blackout {
+        width: 200%;
+        height: 100vh;
+        position: fixed;
+        background-color: #0000006f;
+        top: 0px;
+        z-index: 10;
+    }
+
 }

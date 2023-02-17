@@ -12,3 +12,16 @@ export const Spinner = () => {
         </>
     )
 }
+
+export const SmSpinner = () => {
+    return (
+        <>
+            <div className={`${styles.sm_spinner_cont}`}>
+                <div className={`${styles.md_spinner}`}>
+
+                </div>
+                <div className={`${styles.spin_text}`}>Loading...</div>
+            </div>
+        </>
+    )
+}

@@ -25,8 +25,6 @@ function GeneralDetails() {
         getUserDetail()
     }, [])
 
-    console.log(detail)
-
 
     if (spinner) {
         return <Spinner />
@@ -34,10 +32,10 @@ function GeneralDetails() {
 
     return (
         <>
-            <div>
+            <div className='overfX'>
                 <div className={`${styles.text3} mb-4`}>Personal Information</div>
                 <div className="df jc-space-between">
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>full Name</div>
                             <div className={`${styles.text3}`}>{detail.profile.firstName + ' ' + detail.profile.lastName}</div>
@@ -47,7 +45,7 @@ function GeneralDetails() {
                             <div className={`${styles.text3}`}>{detail.marital}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Phone Number</div>
                             <div className={`${styles.text3}`}>{detail.phoneNumber}</div>
@@ -57,7 +55,7 @@ function GeneralDetails() {
                             <div className={`${styles.text3}`}>{detail.children}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Email Address</div>
                             <div className={`${styles.text3}`}>{detail.email}</div>
@@ -67,7 +65,7 @@ function GeneralDetails() {
                             <div className={`${styles.text3}`}>{detail.residence}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Bvn</div>
                             <div className={`${styles.text3}`}>{detail.profile.bvn}</div>
@@ -84,7 +82,7 @@ function GeneralDetails() {
 
                 <div className={`${styles.text3} mb-4  mt-5`}>Education and Employment</div>
                 <div className="df jc-space-between">
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>level of education</div>
                             <div className={`${styles.text3}`}>{detail.education.level}</div>
@@ -94,7 +92,7 @@ function GeneralDetails() {
                             <div className={`${styles.text3}`}>{detail.education.officeEmail}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>employment status</div>
                             <div className={`${styles.text3}`}>{detail.education.employmentStatus}</div>
@@ -104,7 +102,7 @@ function GeneralDetails() {
                             <div className={`${styles.text3}`}>{'₦' + detail.education.monthlyIncome[0] + ' ' + '-' + ' ' + '₦' + detail.education.monthlyIncome[1]}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>sector of employment</div>
                             <div className={`${styles.text3}`}>{detail.education.sector}</div>
@@ -125,13 +123,13 @@ function GeneralDetails() {
 
                 <div className={`${styles.text3} mb-4  mt-5`}>Socials</div>
                 <div className="df jc-space-between">
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Twitter</div>
                             <div className={`${styles.text3}`}>{detail.socials.twitter}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Facebook</div>
                             <div className={`${styles.text3}`}>{detail.socials.facebook}</div>
@@ -149,19 +147,19 @@ function GeneralDetails() {
 
                 <div className={`${styles.text3} mb-4  mt-5`}>Guarantor</div>
                 <div className="df jc-space-between">
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>full Name</div>
                             <div className={`${styles.text3}`}>{detail.guarantor.firstname + ' ' + detail.guarantor.lastName}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Phone Number</div>
                             <div className={`${styles.text3}`}>{detail.guarantor.phoneNumber}</div>
                         </div>
                     </div>
-                    <div>
+                    <div className='mr-4'>
                         <div className={`mb-4`}>
                             <div className={`${styles.text4} text-tran mb-1`}>Email Address</div>
                             <div className={`${styles.text3}`}>{detail.guarantor.email}</div>

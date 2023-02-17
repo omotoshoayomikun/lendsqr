@@ -4,8 +4,8 @@ import styles from '../../Styles/Forms.module.scss'
 export default function Pagination() {
   return (
     <>
-      <div className="df jc-space-between">
-        <div className="df fs-14px  ai-center">
+      <div className="df jc-space-between flex-wrap">
+        <div className={`df fs-14px ai-center ${styles.lilo} mb-3`}>
           <div className="mr-1">Showing</div>
           <div className="mr-1">
             <select name="" id="" className={styles.xssel}>
@@ -15,7 +15,7 @@ export default function Pagination() {
           </div>
           <div className="">out of 100</div>
         </div>
-        <div className="">
+        <div className={`${styles.lilo} mb-3`}>
           <div className='df ai-center'>
             <div className={styles.pag_dir}><img src="/icons/arrow_left.png" alt="" /></div>
             <div className={styles.pag_num}>1</div>

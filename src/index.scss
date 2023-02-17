@@ -1,8 +1,12 @@
 @import "Styles/variables";
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
+  transition: all 0.5s;
 }
+
 
 @font-face {
   font-family: 'AvenirNextLTPro-Regular';
@@ -79,7 +83,7 @@ nav a.active {
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
   padding: 0px 19px 12px 19px;
-  
+
 }
 
 .line-links a.active {
@@ -191,9 +195,11 @@ nav a.active {
 .fs-1 {
   font-size: 10px;
 }
+
 .fs-14px {
   font-size: 14px;
 }
+
 .fs-2 {
   font-size: 15px;
 }
@@ -479,26 +485,44 @@ nav a.active {
 }
 
 .card {
-  // width: 100%;
+  width: 100% !important;
   height: auto;
   background: #FFFFFF;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   padding: 20px;
-  position: relative;
+  box-sizing: border-box;
+  // position: relative;
+}
+
+.table-responsive {
+  overflow-x: auto;
 }
 
 .table {
   width: 100%;
   font-family: 'WorkSans-Regular' !important;
-  position: relative;
+  // background-color: red;
+  // overflow: hidden;
+  box-sizing: border-box;
+  // overflow-x: scroll;
+  // border-collapse: collapse;
+  // caption-side: bottom;
 }
 
-.table > th, td {
-  border-bottom:1px solid rgba(33, 63, 125, 0.1);
+.table>th,
+td {
+  // border-bottom:1px solid rgba(33, 63, 125, 0.1);
   padding: 20px 0px;
-} 
+}
+
+.table>thead,
+tbody,
+tr {
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  padding: 20px 0px;
+}
 
 th {
   font-family: 'WorkSans-SemiBold' !important;
@@ -515,5 +539,20 @@ td {
 
 .badge {
   padding: 8px 10px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.overfX {
+  overflow-x: auto;
+}
+
+.white-space {
+  white-space: nowrap;
 }

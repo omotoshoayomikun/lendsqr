@@ -33,7 +33,7 @@ function UserDetail() {
 
     return (
         <>
-            <Link to='/admin/users' className='df'>
+            <Link to='/admin/users' className='df '>
                 <div><img src="/icons/arrow.png" alt="" /></div>
                 <div className='ml-1'>Back to Users</div>
             </Link>
@@ -45,28 +45,32 @@ function UserDetail() {
                 </div>
             </div>
 
-            <div className="card" style={{ paddingBottom: '0px' }}>
-                <div className="df ai-center mb-7">
-                    <div className={`${styles.round} mr-2 obj-contain`}>
-                        <img src={detail.profile.avatar} className={`${styles.round}`} alt="" />
+            <div className="card flex-wrap" style={{ paddingBottom: '0px' }}>
+                <div className={`${styles.zasxw}`}>
+                    <div className={`${styles.ZXround} mr-2`}>
+                        <img src={detail.profile.avatar ? detail.profile.avatar : '/icons/sigle_user.png'} className={`${styles.round} obj-contain`} alt="" />
                     </div>
                     <div className='mr-3'>
                         <div className={`${styles.text1} mb-1`}>{detail.profile.firstName + ' ' + detail.profile.lastName}</div>
-                        <div className={styles.text2}>LSQFf587g90</div>
+                        <div className={styles.text2}>{detail.userName}</div>
                     </div>
                     <div className={styles.line}></div>
                     <div className='mr-3 ml-3'>
-                        <div className={styles.text2}> User’s Tier</div>
-                        <div></div>
+                        <div className={`mb-2 ${styles.text2}`}> User’s Tier</div>
+                        <div className='df jc-center'>
+                            <img src="/icons/m_star.png" alt="" />
+                            <img src="/icons/star.png" alt="" />
+                            <img src="/icons/star.png" alt="" />
+                        </div>
                     </div>
-                    <div className={styles.line}></div>
-                    <div className='ml-3'>
+                    <div className={`${styles.line2} mr-3`}></div>
+                    <div className={`${styles.nvcb}`}>
                         <div className={`${styles.text1} mb-1`}>₦{detail.accountBalance}</div>
                         <div className={styles.text2}>{detail.accountNumber}/Providus Bank</div>
                     </div>
                 </div>
 
-                <div className={`line-links df jc-space-between`}>
+                <div className={`line-links df jc-space-between overfX`}>
                     <NavLink to='general-details'>General Details</NavLink>
                     <NavLink to='noroute'>Documents</NavLink>
                     <NavLink to='noroute'>Bank Details</NavLink>

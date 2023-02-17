@@ -9,16 +9,37 @@
 .card_control {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card_cont {
+    width: 23.1%;
+}
+
+@media screen and (max-width: 1222px) {
+    .card_cont {
+        width: 48.5%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card_cont {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .cclxx {
     cursor: pointer;
+    padding: 10px 10px 10px 40px;
 }
 
 .card2 {
     position: absolute;
-    top: 200px;
-    right: -15px;
+    // top: 200px;
+    right: -35px;
+    z-index: 20;
 }
 
 .round {
@@ -31,9 +52,27 @@
     align-items: center;
 }
 
+// .nvcb {
+//     margin-left: 20px;
+// }
+
+
 .line {
     height: 70px;
     border: 1px solid rgba(84, 95, 125, 0.2)
+}
+
+.line2 {
+    display: block;
+    height: 70px;
+    border: 1px solid rgba(84, 95, 125, 0.2)
+}
+
+.zasxw {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .text1 {
@@ -49,9 +88,31 @@
 .text3 {
     font-size: 16px;
     font-family: 'WorkSans-Medium' !important;
+    white-space: nowrap;
 }
 
 .text4 {
     font-size: 12px;
     font-family: 'WorkSans-Medium' !important;
+    white-space: nowrap;
+}
+
+
+@media screen and (max-width: 700px) {
+    .ZXround {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 593px) {
+    .zasxw {
+        justify-content: center;
+    }
+
+    .line2 {
+        display: none;
+    }
 }
