@@ -342,6 +342,7 @@
     background-color: rgba(33, 63, 125, 0.1);
     padding: 3px 5px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .pag_dir:first-child {
@@ -351,8 +352,12 @@
 .pag_num {
     font-size: 16px;
     margin-right: 12px;
-    color: #545F7D;
+    color: rgba(84, 95, 125, 0.6);
+    cursor: pointer;
+}
 
+.active_pag_num {
+    color: rgba(84, 95, 125);
 }
 
 // //////////////////////////////////// SPINNER

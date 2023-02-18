@@ -11,11 +11,25 @@ function Users() {
 
   const navigate = useNavigate()
 
-
   const [details, setDetails] = useState(JSON.parse(localStorage.getItem('details')))
   const [show, setShow] = useState({ id: '', show: false })
   const [filter, setFilter] = useState(false)
   const [spinner, setSpinner] = useState(true)
+
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(10)
+
+
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = details.slice(indexOfFirstPost, indexOfLastPost)
+  
+  const [pageNumLimit, setPageNumLimit] = useState(5)
+  const [maxPageNumLimit, setmaxPageNumLimit] = useState(5)
+  const [minPageNumLimit, setminPageNumLimit] = useState(0)
+
+
 
   useEffect(() => {
     const getDetails = async () => {
@@ -34,8 +48,6 @@ function Users() {
     getDetails()
   }, [])
 
-  console.log(JSON.parse(localStorage.getItem('details')))
-
   const handleComDetails = (id) => {
     setShow({
       id: id,
@@ -45,6 +57,35 @@ function Users() {
 
   const status = (date) => {
     return Number(date.split('-').shift())
+  }
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
+  const handlePagNext = (pageNumbers) => {
+    if (currentPage !== pageNumbers[pageNumbers.length - 1]) {
+
+      setCurrentPage(currentPage + 1)
+
+      if (currentPage + 1 > maxPageNumLimit) {
+        setmaxPageNumLimit(maxPageNumLimit + pageNumLimit)
+        setminPageNumLimit(minPageNumLimit + pageNumLimit)
+      }
+    }
+  }
+
+  const handlePagPrev = (pageNumbers) => {
+
+    if (currentPage !== pageNumbers[0]) {
+
+      setCurrentPage(currentPage - 1)
+
+      if ((currentPage - 1) % pageNumLimit == 0) {
+        setmaxPageNumLimit(maxPageNumLimit - pageNumLimit)
+        setminPageNumLimit(minPageNumLimit - pageNumLimit)
+      }
+    }
   }
 
 
@@ -97,7 +138,7 @@ function Users() {
                       </td>
                     </tr>
                   ) : (
-                    details.map(detail => (
+                    currentPosts.map(detail => (
                       <tr key={detail.id} className='p-r'>
                         <td>{detail.orgName.split('-').shift()}</td>
                         <td>{detail.userName}</td>
@@ -106,13 +147,13 @@ function Users() {
                         <td>{detail.createdAt.split('.').shift()}</td>
                         <td>
                           {
-                            status(detail.lastActiveDate) <= 2003 && <div className="badge" style={{backgroundColor: 'rgba(84, 95, 125, 0.06)', color: '#545F7D'}}>Inactive</div>
+                            status(detail.lastActiveDate) <= 2003 && <div className="badge" style={{ backgroundColor: 'rgba(84, 95, 125, 0.06)', color: '#545F7D' }}>Inactive</div>
                           }
                           {
-                            status(detail.lastActiveDate) >= 2004 && status(detail.lastActiveDate) <= 2022 && <div className="badge" style={{backgroundColor: 'rgba(233, 178, 0, 0.1)', color: '#E9B200'}}>Pending</div>
+                            status(detail.lastActiveDate) >= 2004 && status(detail.lastActiveDate) <= 2022 && <div className="badge" style={{ backgroundColor: 'rgba(233, 178, 0, 0.1)', color: '#E9B200' }}>Pending</div>
                           }
                           {
-                            status(detail.lastActiveDate) >= 2023 && <div className="badge" style={{backgroundColor: 'rgba(57, 205, 98, 0.06)', color: '#39CD62'}}>Active</div>
+                            status(detail.lastActiveDate) >= 2023 && <div className="badge" style={{ backgroundColor: 'rgba(57, 205, 98, 0.06)', color: '#39CD62' }}>Active</div>
                           }
                         </td>
                         <td>
@@ -145,7 +186,16 @@ function Users() {
 
 
         <div className="mt-2">
-          <Pagination />
+          <Pagination
+            postsPerPage={postPerPage}
+            totalPosts={details.length}
+            paginate={paginate}
+            currentPage={currentPage}
+            maxPageNumLimit={maxPageNumLimit}
+            minPageNumLimit={minPageNumLimit}
+            handlePagNext={handlePagNext}
+            handlePagPrev={handlePagPrev}
+          />
         </div>
       </div>
     </>
