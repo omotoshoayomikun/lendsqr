@@ -12,21 +12,7 @@ function Users() {
   const [filter, setFilter] = useState(false)
   const [spinner, setSpinner] = useState(true)
 
-
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(10)
-
-
-  const indexOfLastPost = currentPage * postPerPage;
-  const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const currentPosts = details.slice(indexOfFirstPost, indexOfLastPost)
   
-  const [pageNumLimit, setPageNumLimit] = useState(5)
-  const [maxPageNumLimit, setmaxPageNumLimit] = useState(5)
-  const [minPageNumLimit, setminPageNumLimit] = useState(0)
-
-
-
   useEffect(() => {
     const getDetails = async () => {
       try {
@@ -43,6 +29,20 @@ function Users() {
 
     getDetails()
   }, [])
+
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(10)
+
+
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = details.slice(indexOfFirstPost, indexOfLastPost)
+  
+  const [pageNumLimit, setPageNumLimit] = useState(5)
+  const [maxPageNumLimit, setmaxPageNumLimit] = useState(5)
+  const [minPageNumLimit, setminPageNumLimit] = useState(0)
+
 
   const handleComDetails = (id) => {
     setShow({
