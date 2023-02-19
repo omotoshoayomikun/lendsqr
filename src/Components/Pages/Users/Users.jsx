@@ -7,7 +7,7 @@ function Users() {
 
   const navigate = useNavigate()
 
-  const [details, setDetails] = useState(JSON.parse(localStorage.getItem('details')))
+  const [details, setDetails] = useState( process.env.NODE_ENV === 'development' ? JSON.parse(localStorage.getItem('details')) : [])
   const [show, setShow] = useState({ id: '', show: false })
   const [filter, setFilter] = useState(false)
   const [spinner, setSpinner] = useState(true)
@@ -18,7 +18,7 @@ function Users() {
       try {
         const res = await axios.get(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users`)
         localStorage.setItem('details', JSON.stringify(res.data))
-        // setDetails(res.data)
+        process.env.NODE_ENV !== 'development' && setDetails(res.data)
         setSpinner(false)
       } catch (err) {
         setSpinner(false)
