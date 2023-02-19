@@ -6,19 +6,23 @@ import UsersView from '../../PageViews/UsersView'
 function Users() {
 
   const navigate = useNavigate()
-
-  const [details, setDetails] = useState( process.env.NODE_ENV === 'development' ? JSON.parse(localStorage.getItem('details')) : [])
+  
+  const [details, setDetails] = useState(!process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? JSON.parse(localStorage.getItem('details')) : [])
   const [show, setShow] = useState({ id: '', show: false })
   const [filter, setFilter] = useState(false)
   const [spinner, setSpinner] = useState(true)
 
-  
+
   useEffect(() => {
     const getDetails = async () => {
       try {
         const res = await axios.get(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users`)
-        localStorage.setItem('details', JSON.stringify(res.data))
-        process.env.NODE_ENV !== 'development' && setDetails(res.data)
+
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+          localStorage.setItem('details', JSON.stringify(res.data))
+      } else {
+          setDetails(res.data)
+      }
         setSpinner(false)
       } catch (err) {
         setSpinner(false)
@@ -38,7 +42,7 @@ function Users() {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = details.slice(indexOfFirstPost, indexOfLastPost)
-  
+
   const [pageNumLimit, setPageNumLimit] = useState(5)
   const [maxPageNumLimit, setmaxPageNumLimit] = useState(5)
   const [minPageNumLimit, setminPageNumLimit] = useState(0)
